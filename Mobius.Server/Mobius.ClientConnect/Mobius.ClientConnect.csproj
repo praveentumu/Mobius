@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29AF4265-AD5A-4405-B1D9-D9F571D853EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mobius.ClientConnect</RootNamespace>
+    <AssemblyName>Mobius.ClientConnect</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssertionHelper.cs" />
+    <Compile Include="DocumentHelper.cs" />
+    <Compile Include="DocumentSubmission.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Interface\IMobiusConnect.cs" />
+    <Compile Include="Patient.cs" />
+    <Compile Include="PatientDocument.cs" />
+    <Compile Include="Web References\AdapterPEP.cs" />
+    <Compile Include="Web References\DocumentQuery.cs" />
+    <Compile Include="Web References\PatientDiscovery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\PolicyEngine.cs" />
+    <Compile Include="Web References\MobiusPatientCorrelation.cs" />
+    <Compile Include="Web References\RetrieveDocument.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C32Utility\C32Utility.csproj">
+      <Project>{AD5A86BB-9A1F-40A4-92A3-8059D61E7D74}</Project>
+      <Name>C32Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobius.CoreLibrary\Mobius.CoreLibrary.csproj">
+      <Project>{400CFAD6-BEBB-4ABC-AB77-412DCB4A8400}</Project>
+      <Name>Mobius.CoreLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobius.Entity\Mobius.Entity.csproj">
+      <Project>{2BAB5079-F47D-4AD4-BE31-063A2576F002}</Project>
+      <Name>Mobius.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobius.FileSystem\Mobius.FileSystem.csproj">
+      <Project>{89892CBF-C55B-431F-B133-3679FCE56A9C}</Project>
+      <Name>Mobius.FileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobius.Contracts\Mobius.Contracts.csproj">
+      <Project>{E37ED2E7-7382-4296-A387-438176473DE3}</Project>
+      <Name>Mobius.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAMLAssertion\SAMLAssertion.csproj">
+      <Project>{B79C7929-107E-4F66-86B0-6C18E41DD16D}</Project>
+      <Name>SAMLAssertion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XACML\XACML.csproj">
+      <Project>{B2906C41-BC7C-42E6-9545-AAAC92E53DE7}</Project>
+      <Name>XACML</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

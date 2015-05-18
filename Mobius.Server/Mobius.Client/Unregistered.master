@@ -1,0 +1,386 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Unregistered.master.cs"
+    Inherits="Unregistered" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Client Website</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <%-- <style type="text/css">
+        <!
+        -- body
+        {
+            margin-right: 0px;
+            margin-left: 0px;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            background-color: #FFFFFF;
+            background-image: url(images/blue_bg.gif);
+        }
+        -- ></style>--%>
+    <link href="App_Themes/FGenesis/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/sdmenu.css" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/Mobius_style.css" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/jquery-ui-1.8.13.custom.css">
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/ui.dropdownchecklist.themeroller.css">
+    <!-- Include the basic JQuery support (core and ui) -->
+    <script type="text/javascript" src="Scripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.13.custom.min.js"></script>
+    <!-- Include the DropDownCheckList supoprt -->
+    <script type="text/javascript" src="Scripts/ui.dropdownchecklist-1.4-min.js"></script>
+    <style type="text/css">
+        .initial2
+        {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: normal;
+            color: #FFFFFF;
+            background-color: #3399cc;
+            padding: 3px 3px 3px 3px;
+        }
+    </style>
+    <script type="text/javascript" language="javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="100%">
+                <table width="100%" border="0" align="center" cellpadding="2" cellspacing="1">
+                    <tr>
+                        <td bgcolor="#CCCCCC">
+                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top" bgcolor="#E2E4E4">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td class="three" style="background-image: url(images/03.gif);" valign="top">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td height="7">
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="20">
+                                                            </td>
+                                                            <td class="caption" align="left">
+                                                                <%--User Account:--%>
+                                                                Current Page:
+                                                                <asp:Label ID="LblHeading" runat="server"></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="right" class="five" style="background-image: url(images/05.gif);" width="60%">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                <img src="images/04.gif" width="70" height="56" alt="" />
+                                                            </td>
+                                                            <td align="right">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                                                    <tr>
+                                                                        <td height="12" align="right" valign="baseline" class="text">
+                                                                            <p>
+                                                                                <span class="headtext">
+                                                                                    <%=userName %></span> &nbsp; <span class="bluetext">
+                                                                                        <asp:LinkButton runat="server" CssClass="logout"></asp:LinkButton>
+                                                                                    </span>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                        </td>
+                                                                        <td align="right">
+                                                                            <img src="images/logo_small.png">
+                                                                        </td>
+                                                                        <td>
+                                                                            <p>
+                                                                                <span class="bluetext"><a href="Login.aspx" runat="server" class="logout">Login</a></span> ||
+                                                                                <span class="bluetext">
+                                                                                    <asp:LinkButton ID="lnkLogout" runat="server" CssClass="logout" OnClientClick="window.open('','_self').close();">Close</asp:LinkButton>
+                                                                                </span>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td width="20" align="right" valign="bottom">
+                                                                &nbsp;
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" bgcolor="#E2E4E5">
+                                        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td valign="top" bgcolor="#FFFFFF">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td width="2">
+                                                            </td>
+                                                            <td height="2" background="images/top_line.gif">
+                                                            </td>
+                                                            <td width="2">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td background="images/left_line.gif">
+                                                            </td>
+                                                            <td align="center" bgcolor="#EFEFEF">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td width="20%" align="center" valign="top" bgcolor="#b1c3d9">
+                                                                            <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                                                                                <% if (pageName == "InitialFacility.aspx" || pageName == "FacilityAssociation.aspx" || pageName == "AssociateFacility.aspx" || pageName == "ManageFacility.aspx" || pageName == "EditFacilityInfo.aspx")
+                                                                                   {%>
+                                                                                <td width="21%" valign="top" bgcolor="#b1c3d9">
+                                                                                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                        <img src="images/fglogo_transp.png" width="192" height="79" alt="" />
+                                                                                        <tr>
+                                                                                            <td height="25" align="left" class="bluetext">
+                                                                                                <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="ManageFacility.aspx" CssClass="bluetext">Manage Facility</asp:HyperLink>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td height="1" style="background-image: url('images/line.gif)">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td style="height: 10px">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                    <img src="images/health_info_exchange.png" width="215" alt="" />
+                                                                                </td>
+                                                                                <%} %>
+                                                                                <%else
+                                                                                   { %>
+                                                                                <td width="21%" valign="top" bgcolor="#b1c3d9">
+                                                                                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                        <img src="images/fglogo_transp.png" width="192" height="79" alt="" />
+                                                                                        <%--<%if (sfid == "1")--%>
+                                                                                        <%if (sFacilityType == "Military")
+                                                                                          {%>
+                                                                                        <tr>
+                                                                                            <td height="1" style="background-image: url('images/line.gif)">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <% } %>
+                                                                                        <%else
+                                                                                          { %>
+                                                                                        <% } %>
+                                                                                        <%-- <tr>
+                                                                                            <td height="25" align="left" class="bluetext">
+                                                                                                <asp:HyperLink ID="hlkSearchUser" runat="server" NavigateUrl="SearchUser.aspx" CssClass="bluetext">Search Patient</asp:HyperLink>
+                                                                                            </td>
+                                                                                        </tr>--%>
+                                                                                        <%--<tr>
+                                                                                <td height="25" align="left" class="bluetext">
+                                                                                    <asp:HyperLink ID="hlkRegisterProvider"  runat="server" NavigateUrl="RegisterProvider.aspx" CssClass="bluetext">Register Provider</asp:HyperLink>
+                                                                                </td>
+                                                                            </tr>--%>
+                                                                                        <%-- <tr>
+                                                                                            <td height="25" align="left" class="bluetext">
+                                                                                                <asp:HyperLink ID="hlkManageReferrals" Visible="true" runat="server" NavigateUrl="ManageReferral.aspx"
+                                                                                                    CssClass="bluetext">Manage Referrals</asp:HyperLink>
+                                                                                            </td>
+                                                                                        </tr>--%>
+                                                                                        <tr>
+                                                                                            <td style="height: 10px">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                    <img src="images/health_info_exchange.png" width="215" alt="" />
+                                                                                </td>
+                                                                                <% } %>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td valign="top">
+                                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tr id="tblLinks" runat="server">
+                                                                                    <td width="2%">
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                    <td height="29" align="center" background="images/dolphin_bg-OVER.gif">
+                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="whitetext">
+                                                                                            <tr visible="false">
+                                                                                                <%if (sFacilityType == "Military")
+                                                                                                  { %>
+                                                                                                <%if (pageName == "UserAccount.aspx")
+                                                                                                  {%>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        User Account</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "RegisterUserNext.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Register UserNext</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "SearchUser.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Search Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "DocumentList.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Document List</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "SharePatientDocument.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Share Patient Document</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "RegisterProvider.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Provider</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "ManageReferral.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Manage Referrals</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "ReferPatient.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Refer Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "RegisterPatient.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Register Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%} %>
+                                                                                                <% else
+                                                                                                  { %>
+                                                                                                <%if (pageName == "RegisterProvider.aspx")
+                                                                                                  {%>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Provider</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "ReferPatient.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Refer Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "RegisterPatient.aspx")
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Register Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else
+                                                                                                  { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Patients</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% } %>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td width="2%">
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="tblLinksBars" runat="server">
+                                                                                    <td>
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                    <td align="center" bgcolor="#143D55">
+                                                                                        <p>
+                                                                                            &nbsp;</p>
+                                                                                        <p>
+                                                                                            &nbsp;</p>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <table style="height: 100%; width: 100%;">
+                                                                                            <tr>
+                                                                                                <td style="width: 100%; height: 100%" valign="top">
+                                                                                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                                                                    </asp:ContentPlaceHolder>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td background="images/right_line.gif">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            </td>
+                                                            <td height="2" background="images/bot_line.gif">
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

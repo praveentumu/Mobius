@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="gatewaycall" storage="e:\project\first-genesis\source code\mobius.server\mobiushise.unittest\gatewaycall.orderedtest" id="b453f26d-15f3-4d5c-8d1e-38d5e91a2fff" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="37b6f273-1aac-eadc-5d06-f0a47bcb5e1a" name="SearchPatientTest_GateWayCall" storage="bin\debug\mobiushise.unittest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="72b42c7e-0063-74fa-6cf1-162eec73541c" name="GetDocumentMetadataTest_GateWayCall" storage="bin\debug\mobiushise.unittest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="e79b16d9-827a-33a2-639d-053739999074" name="GetDocumentTest_GateWayCall" storage="bin\debug\mobiushise.unittest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="c5c8c815-cb4b-c48a-f403-992bc7b9d915" name="UploadDocumentTest_GateWayCall" storage="bin\debug\mobiushise.unittest.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s3="http://www.w3.org/2001/04/xmlenc#" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:s4="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s2="http://www.w3.org/2000/09/xmldsig#" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="urn:oasis:names:tc:SAML:2.0:assertion" />
+      <s:element name="CreateAssertion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="receiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NotBefore" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="NotOnOrAfter" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="HomeCommunityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAssertionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="s1:Assertion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:SAML:2.0:assertion">
+      <s:import namespace="http://www.w3.org/2000/09/xmldsig#" />
+      <s:import namespace="http://www.w3.org/2001/04/xmlenc#" />
+      <s:element name="Assertion" type="s1:Assertion" />
+      <s:complexType name="Assertion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Issuer" type="s1:NameID" />
+          <s:element minOccurs="0" maxOccurs="1" ref="s2:Signature" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s1:Subject" />
+          <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="s1:Conditions" />
+          <s:element minOccurs="0" maxOccurs="1" name="Advice" type="s1:Advice" />
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="AuthzDecisionStatement" type="s1:AuthzDecisionStatement" />
+            <s:element minOccurs="0" maxOccurs="1" name="Statement" type="s1:StatementAbstract" />
+            <s:element minOccurs="0" maxOccurs="1" name="AttributeStatement" type="s1:AttributeStatement" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthnStatement" type="s1:AuthnStatement" />
+          </s:choice>
+        </s:sequence>
+        <s:attribute name="Version" type="s:string" />
+        <s:attribute name="AccessConsentPolicy" type="s:string" />
+        <s:attribute name="InstanceAccessConsentPolicy" type="s:string" />
+        <s:attribute name="ID" type="s:ID" />
+        <s:attribute name="IssueInstant" type="s:string" />
+      </s:complexType>
+      <s:complexType name="NameID">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="NameQualifier" type="s:string" />
+            <s:attribute name="SPNameQualifier" type="s:string" />
+            <s:attribute name="Format" type="s:anyURI" />
+            <s:attribute name="SPProvidedID" type="s:string" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="Subject">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="BaseID" type="s1:BaseIDAbstract" />
+            <s:element minOccurs="0" maxOccurs="1" name="NameID" type="s1:NameID" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedID" type="s1:EncryptedElement" />
+            <s:element minOccurs="0" maxOccurs="1" name="SubjectConfirmation" type="s1:SubjectConfirmation" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BaseIDAbstract" abstract="true">
+        <s:attribute name="NameQualifier" type="s:string" />
+        <s:attribute name="SPNameQualifier" type="s:string" />
+      </s:complexType>
+      <s:complexType name="EncryptedElement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" ref="s3:EncryptedData" />
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s3:EncryptedKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EncryptedAssertion">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:EncryptedElement" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SubjectConfirmation">
+        <s:sequence>
+          <s:choice minOccurs="1" maxOccurs="1">
+            <s:element minOccurs="0" maxOccurs="1" name="NameID" type="s1:NameID" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedID" type="s1:EncryptedElement" />
+            <s:element minOccurs="0" maxOccurs="1" name="BaseID" type="s1:BaseIDAbstract" />
+          </s:choice>
+          <s:element minOccurs="0" maxOccurs="1" name="SubjectConfirmationData" type="s1:SubjectConfirmationData" />
+        </s:sequence>
+        <s:attribute name="Method" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="SubjectConfirmationData">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="NotOnOrAfter" type="s:string" />
+        <s:attribute name="NotBefore" type="s:string" />
+        <s:attribute name="Recipient" type="s:anyURI" />
+        <s:attribute name="InResponseTo" type="s:NCName" />
+        <s:attribute name="Address" type="s:string" />
+        <s:anyAttribute />
+      </s:complexType>
+      <s:complexType name="KeyInfoConfirmationData">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:SubjectConfirmationData" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Conditions">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="OneTimeUse" type="s1:OneTimeUse" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProxyRestriction" type="s1:ProxyRestriction" />
+            <s:element minOccurs="0" maxOccurs="1" name="AudienceRestriction" type="s1:AudienceRestriction" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s1:ConditionAbstract" />
+          </s:choice>
+        </s:sequence>
+        <s:attribute name="NotBefore" type="s:string" />
+        <s:attribute name="NotOnOrAfter" type="s:string" />
+      </s:complexType>
+      <s:complexType name="OneTimeUse">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ConditionAbstract" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ConditionAbstract" abstract="true" />
+      <s:complexType name="AudienceRestriction">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ConditionAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="Audience" type="s:anyURI" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ProxyRestriction">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:ConditionAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="Audience" type="s:anyURI" />
+            </s:sequence>
+            <s:attribute name="Count" type="s:nonNegativeInteger" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Advice">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedAssertion" type="s1:EncryptedElement" />
+            <s:element minOccurs="0" maxOccurs="1" name="Assertion" type="s1:Assertion" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssertionIDRef" type="s:NCName" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssertionURIRef" type="s:anyURI" />
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AuthzDecisionStatement">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:StatementAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Action" type="s1:Action" />
+              <s:element minOccurs="0" maxOccurs="1" name="Evidence" type="s1:Evidence" />
+            </s:sequence>
+            <s:attribute name="Resource" type="s:anyURI" />
+            <s:attribute name="Decision" type="s1:DecisionType" use="required" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="StatementAbstract" abstract="true" />
+      <s:complexType name="AttributeStatement">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:StatementAbstract">
+            <s:sequence>
+              <s:choice minOccurs="0" maxOccurs="unbounded">
+                <s:element minOccurs="0" maxOccurs="1" name="EncryptedAttribute" type="s1:EncryptedElement" />
+                <s:element minOccurs="0" maxOccurs="1" name="Attribute" type="s1:SamlAttribute" />
+              </s:choice>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SamlAttribute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AttributeValue" nillable="true" type="s:string" />
+        </s:sequence>
+        <s:attribute name="Name" type="s:string" />
+        <s:attribute name="NameFormat" type="s:anyURI" />
+        <s:attribute name="FriendlyName" type="s:string" />
+        <s:anyAttribute />
+      </s:complexType>
+      <s:complexType name="AuthnStatement">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:StatementAbstract">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SubjectLocality" type="s1:SubjectLocality" />
+              <s:element minOccurs="0" maxOccurs="1" name="AuthnContext" type="s1:AuthnContext" />
+            </s:sequence>
+            <s:attribute name="AuthnInstant" type="s:string" />
+            <s:attribute name="SessionIndex" type="s:string" />
+            <s:attribute name="SessionNotOnOrAfter" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="SubjectLocality">
+        <s:attribute name="Address" type="s:string" />
+        <s:attribute name="DNSName" type="s:string" />
+      </s:complexType>
+      <s:complexType name="AuthnContext">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="AuthnContextDeclRef" type="s:anyURI" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthnContextDecl" />
+            <s:element minOccurs="0" maxOccurs="1" name="AuthnContextClassRef" type="s:anyURI" />
+          </s:choice>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AuthenticatingAuthority" type="s:anyURI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Action">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="Namespace" type="s:anyURI" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="Evidence">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="Assertion" type="s1:Assertion" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssertionIDRef" type="s:NCName" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssertionURIRef" type="s:anyURI" />
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptedAssertion" type="s1:EncryptedElement" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DecisionType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Permit" />
+          <s:enumeration value="Deny" />
+          <s:enumeration value="Indeterminate" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.w3.org/2000/09/xmldsig#">
+      <s:element name="Signature" type="s2:Signature" />
+      <s:complexType name="Signature">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SignedInfo" type="s2:SignedInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="SignatureValue" type="s2:SignatureValue" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeyInfo" type="s2:KeyInfo" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Object" type="s2:ObjectType" />
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+      </s:complexType>
+      <s:complexType name="SignedInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CanonicalizationMethod" type="s2:CanonicalizationMethod" />
+          <s:element minOccurs="0" maxOccurs="1" name="SignatureMethod" type="s2:SignatureMethod" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Reference" type="s2:Reference" />
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+      </s:complexType>
+      <s:complexType name="CanonicalizationMethod" mixed="true">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="Algorithm" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="SignatureMethod" mixed="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HMACOutputLength" type="s:integer" />
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="Algorithm" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="Reference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Transforms" type="s2:ArrayOfTransform" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigestMethod" type="s2:DigestMethod" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigestValue" type="s:base64Binary" />
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+        <s:attribute name="URI" type="s:anyURI" />
+        <s:attribute name="Type" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="ArrayOfTransform">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Transform" type="s2:Transform" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Transform" mixed="true">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="XPath" type="s:string" />
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:choice>
+        </s:sequence>
+        <s:attribute name="Algorithm" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="DigestMethod" mixed="true">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="Algorithm" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="SignatureValue">
+        <s:simpleContent>
+          <s:extension base="s:base64Binary">
+            <s:attribute name="Id" type="s:ID" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="KeyInfo" mixed="true">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="PGPData" type="s2:PGPData" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509Data" type="s2:X509Data" />
+            <s:element minOccurs="0" maxOccurs="1" name="MgmtData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RetrievalMethod" type="s2:RetrievalMethod" />
+            <s:element minOccurs="0" maxOccurs="1" name="SPKIData" type="s2:SPKIData" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyValue" type="s2:KeyValue" />
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:choice>
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+      </s:complexType>
+      <s:complexType name="PGPData">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="PGPKeyID" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="PGPKeyPacket" type="s:base64Binary" />
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="X509Data">
+        <s:sequence>
+          <s:choice minOccurs="0" maxOccurs="unbounded">
+            <s:element minOccurs="0" maxOccurs="1" name="X509SKI" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509IssuerSerial" type="s2:X509IssuerSerial" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509CRL" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509SubjectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="X509Certificate" type="s:base64Binary" />
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="X509IssuerSerial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="X509IssuerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="X509SerialNumber" type="s:integer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RetrievalMethod">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Transforms" type="s2:ArrayOfTransform" />
+        </s:sequence>
+        <s:attribute name="URI" type="s:anyURI" />
+        <s:attribute name="Type" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="SPKIData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SPKISexp" type="s:base64Binary" />
+          <s:any minOccurs="0" maxOccurs="1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValue" mixed="true">
+        <s:sequence>
+          <s:choice minOccurs="1" maxOccurs="1">
+            <s:element minOccurs="0" maxOccurs="1" name="DSAKeyValue" type="s2:DSAKeyValue" />
+            <s:element minOccurs="0" maxOccurs="1" name="RSAKeyValue" type="s2:RSAKeyValue" />
+            <s:any minOccurs="0" maxOccurs="1" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DSAKeyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="P" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Q" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="G" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Y" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="J" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Seed" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="PgenCounter" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RSAKeyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Modulus" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exponent" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ObjectType" mixed="true">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+        <s:attribute name="MimeType" type="s:string" />
+        <s:attribute name="Encoding" type="s:anyURI" />
+      </s:complexType>
+      <s:element name="KeyInfo" type="s2:KeyInfo" />
+      <s:element name="Transform" type="s2:Transform" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.w3.org/2001/04/xmlenc#">
+      <s:import namespace="http://www.w3.org/2000/09/xmldsig#" />
+      <s:element name="EncryptedData" type="s3:EncryptedData" />
+      <s:complexType name="EncryptedData">
+        <s:complexContent mixed="false">
+          <s:extension base="s3:Encrypted" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Encrypted" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EncryptionMethod" type="s3:EncryptionMethod" />
+          <s:element minOccurs="0" maxOccurs="1" ref="s2:KeyInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="CipherData" type="s3:CipherData" />
+          <s:element minOccurs="0" maxOccurs="1" name="EncryptionProperties" type="s3:EncryptionProperties" />
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+        <s:attribute name="Type" type="s:anyURI" />
+        <s:attribute name="MimeType" type="s:string" />
+        <s:attribute name="Encoding" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="EncryptionMethod" mixed="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KeySize" type="s:integer" />
+          <s:element minOccurs="0" maxOccurs="1" name="OAEPparams" type="s:base64Binary" />
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="Algorithm" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="CipherData">
+        <s:sequence>
+          <s:choice minOccurs="1" maxOccurs="1">
+            <s:element minOccurs="0" maxOccurs="1" name="CipherReference" type="s3:CipherReference" />
+            <s:element minOccurs="0" maxOccurs="1" name="CipherValue" type="s:base64Binary" />
+          </s:choice>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CipherReference">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Transforms" type="s3:TransformsType" />
+        </s:sequence>
+        <s:attribute name="URI" type="s:anyURI" />
+      </s:complexType>
+      <s:complexType name="TransformsType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" ref="s2:Transform" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EncryptionProperties">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EncryptionProperty" type="s3:EncryptionProperty" />
+        </s:sequence>
+        <s:attribute name="Id" type="s:ID" />
+      </s:complexType>
+      <s:complexType name="EncryptionProperty" mixed="true">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="Target" type="s:anyURI" />
+        <s:attribute name="Id" type="s:ID" />
+        <s:anyAttribute />
+      </s:complexType>
+      <s:complexType name="EncryptedKey">
+        <s:complexContent mixed="false">
+          <s:extension base="s3:Encrypted">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ReferenceList">
+                <s:complexType>
+                  <s:sequence>
+                    <s:choice minOccurs="0" maxOccurs="unbounded">
+                      <s:element minOccurs="0" maxOccurs="1" name="KeyReference" type="s3:ReferenceType" />
+                      <s:element minOccurs="0" maxOccurs="1" name="DataReference" type="s3:ReferenceType" />
+                    </s:choice>
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+              <s:element minOccurs="0" maxOccurs="1" name="CarriedKeyName" type="s:string" />
+            </s:sequence>
+            <s:attribute name="Recipient" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ReferenceType">
+        <s:sequence>
+          <s:any minOccurs="0" maxOccurs="unbounded" />
+        </s:sequence>
+        <s:attribute name="URI" type="s:anyURI" />
+      </s:complexType>
+      <s:element name="EncryptedKey" type="s3:EncryptedKey" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:SAML:2.0:metadata">
+      <s:import namespace="urn:oasis:names:tc:SAML:2.0:assertion" />
+      <s:complexType name="RequestedAttribute">
+        <s:complexContent mixed="false">
+          <s:extension base="s1:SamlAttribute">
+            <s:attribute name="isRequired" type="s:string" />
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateAssertionSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAssertion" />
+  </wsdl:message>
+  <wsdl:message name="CreateAssertionSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAssertionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SamlService1Soap">
+    <wsdl:operation name="CreateAssertion">
+      <wsdl:input message="tns:CreateAssertionSoapIn" />
+      <wsdl:output message="tns:CreateAssertionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SamlService1Soap" type="tns:SamlService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAssertion">
+      <soap:operation soapAction="http://tempuri.org/CreateAssertion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SamlService1Soap12" type="tns:SamlService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAssertion">
+      <soap12:operation soapAction="http://tempuri.org/CreateAssertion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SamlService1">
+    <wsdl:port name="SamlService1Soap" binding="tns:SamlService1Soap">
+      <soap:address location="http://10.0.30.61:8008/SAMLService/SamlService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SamlService1Soap12" binding="tns:SamlService1Soap12">
+      <soap12:address location="http://10.0.30.61:8008/SAMLService/SamlService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

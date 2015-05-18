@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:tns="http://www.hhs.gov/healthit/nhin/cdc" elementFormDefault="qualified" targetNamespace="http://www.hhs.gov/healthit/nhin/cdc" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="CdcBioPackageSubscriptionCriteriaType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Frequency">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="FrequencyUnits" type="xsd:integer" />
+            <xsd:element name="FrequencyDuration" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SizeThreshold" type="xsd:integer" />
+      <xsd:element name="MessageTypes" type="tns:MessageTypesType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MessageTypesType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="MessageType" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="CdcBioPackageSubscriptionCriteria" type="tns:CdcBioPackageSubscriptionCriteriaType" />
+  <xsd:simpleType name="CdcBioPackagePayloadType">
+    <xsd:restriction base="xsd:base64Binary" />
+  </xsd:simpleType>
+  <xsd:element name="CdcBioPackagePayload" type="tns:CdcBioPackagePayloadType" />
+</xsd:schema>

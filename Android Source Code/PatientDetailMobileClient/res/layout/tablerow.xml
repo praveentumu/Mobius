@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <TableRow 
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      		  android:id="@+id/tablerow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" 
+            >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight=".01"
+                android:maxEms="1"
+                android:text="@string/label_star"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/mandatory_star_color" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".4"
+                android:text="@string/label_first_name"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <EditText
+                android:id="@+id/edtfirstname"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:ems="10"
+                android:hint="@string/hint_first_name"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+
+                <requestFocus />
+            </EditText>
+
+        </TableRow>
