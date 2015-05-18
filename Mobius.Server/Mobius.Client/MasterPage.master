@@ -1,0 +1,441 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxtoolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Mobius Client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="App_Themes/FGenesis/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/sdmenu.css" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/Mobius_style.css" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/jquery-ui-1.8.13.custom.css" />
+    <link rel="stylesheet" type="text/css" href="app_Themes/FGenesis/ui.dropdownchecklist.themeroller.css" />
+    <link id="Link1" runat="server" href="~/App_Themes/FGenesis/MSPopup.css" rel="stylesheet"
+        type="text/css" />
+    <!-- Include the basic JQuery support (core and ui) -->
+    <script type="text/javascript" src="Scripts/jquery-1.6.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui-1.8.13.custom.min.js"></script>
+    <!-- Include the DropDownCheckList supoprt -->
+    <script type="text/javascript" src="Scripts/ui.dropdownchecklist-1.4-min.js"></script>
+    <script type="text/javascript" src="Scripts/msPopup.js"></script>
+    <style type="text/css">
+        .initial2
+        {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 11px;
+            font-weight: normal;
+            color: #FFFFFF;
+            background-color: #3399cc;
+            padding: 3px 3px 3px 3px;
+        }
+        .modalPopup
+        {
+            background-color: #EEEEEE;
+            border-width: 3px;
+            border-style: solid;
+            border-color: Gray;
+            font-family: Verdana;
+            font-size: medium;
+            padding: 3px;
+            width: 250px;
+            margin-top: -320px;
+            margin-left: 462px;
+            position: relative;
+        }
+    </style>
+    <script type="text/javascript" language="javascript">
+
+        // For clearing browser history.
+        history.forward();
+
+        var buttontarget = ""
+
+        function msg() {
+            alert("Not Implemented in phase one.")
+        }
+
+        function change(e, color) {
+            var el = window.event ? event.srcElement : e.target
+            if (el.tagName == "INPUT" && el.type == "button")
+                el.style.backgroundColor = color
+        }
+
+        function jumpto2(url) {
+            if (buttontarget == "")
+                window.location = url
+            else if (buttontarget == "_new")
+                window.open(url)
+            else
+                parent[buttontarget].location = url
+        }
+
+
+        function OpenWindow(panel, password) {
+            document.getElementById(password).value = '';
+            document.getElementById(panel).style.display = 'inline';
+            return false;
+        }
+
+        function changePassword() {
+            var caption = "Change Password";
+            var url = "ChangePassword.aspx";
+            open_popup('CENTER', 'CENTER', url, 'Change Password', 380, 275, false)
+            return false;
+        }
+
+        function ExportCertificate() {
+            var caption = "Allow other devices";
+            var url = "AllowOtherDevices.aspx";
+            open_popup('CENTER', 'CENTER', url, 'Allow other devices', 475, 250, false)
+            return false;
+        }
+
+      
+
+        function showHideMenu(controlName) {
+
+            if ($("#" + controlName).is(':visible'))
+                $("#" + controlName).fadeToggle(2000);
+            else
+                $("#" + controlName).slideToggle();
+
+        }
+
+
+    </script>
+</head>
+<body>
+<script type="text/javascript">
+function UpgradeAccount() {
+            var caption = "Upgrade Account";
+            var url = "UpgradeAccount.aspx";
+            var daysLeft=<%=(ValidTill - DateTime.Now).TotalDays%>;
+            var ServiceNotificationGap=<%=NOTIFICATION_DURATION %>
+            if(daysLeft<ServiceNotificationGap)
+            open_popup('CENTER', 'CENTER', url, caption, 475, 275, false)
+            else
+            open_popup('CENTER', 'CENTER', url, caption, 475, 200, false)
+            return false;
+        }
+</script>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager" runat="server" EnablePageMethods="true" AsyncPostBackTimeout="36000">
+    </asp:ScriptManager>
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="100%">
+                <table width="100%" border="0" align="center" cellpadding="2" cellspacing="1">
+                    <tr>
+                        <td bgcolor="#CCCCCC">
+                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td valign="top" bgcolor="#E2E4E4">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td class="three" style="background-image: url(images/03.gif);" valign="top">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td height="7">
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="20">
+                                                            </td>
+                                                            <td class="caption" align="left">
+                                                                Current Page:
+                                                                <asp:Label ID="LblHeading" runat="server"></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td align="right" class="five" style="background-image: url(images/05.gif);" width="60%">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td valign="top" align="left">
+                                                                <img src="images/04.gif" width="70" height="56" alt="" />
+                                                            </td>
+                                                            <td align="right">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                                                                    <tr>
+                                                                        <td class="text">
+                                                                        </td>
+                                                                        <td class="text" align="left">
+                                                                            <% if (FirstGenesis.UI.GlobalSessions.SessionItem(FirstGenesis.UI.SessionItem.UserRole) != null)
+                                                                               { %>
+                                                                            <asp:Label ID="lblProviderName" runat="server" class="Bold_text">Role :
+                                                                            <span class="headtext"> <%=FirstGenesis.UI.GlobalSessions.SessionItem(FirstGenesis.UI.SessionItem.UserRole)%></span>
+                                                                            </asp:Label>
+                                                                            <% } %>
+                                                                        </td>
+                                                                        <td height="12" align="right" valign="baseline" class="text">
+                                                                            <p>
+                                                                                <% if (userName != "")
+                                                                                   { %>
+                                                                                <span class="Bold_text">Welcome</span> <span class="headtext">
+                                                                                    <%=userName %></span> &nbsp;
+                                                                                <% } %>
+                                                                                <span class="bluetext">
+                                                                                    <asp:LinkButton ID="lnkLogout" runat="server" CssClass="logout" OnClick="lnkLogout_Click">Close Session</asp:LinkButton>
+                                                                                </span>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <!-- Certificate Expired notification-->
+                                                                    <tr>
+                                                                        <td colspan="3" align="right" style="font-size: 11px" valign="baseline" class="text">
+                                                                            <p>
+                                                                                Account valid till
+                                                                                <%= ValidTill.ToString() %>
+                                                                                <%if ((ValidTill - DateTime.Now).TotalDays < NOTIFICATION_DURATION)
+                                                                                  { %><span style="color: Red">(<%=Convert.ToInt32((ValidTill - DateTime.Now).TotalDays)%>
+                                                                                     days left)</span><%} %>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                        </td>
+                                                                        <td align="right">
+                                                                            <img src="images/logo_small.png" />
+                                                                        </td>
+                                                                        <td>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td width="20" align="right" valign="bottom">
+                                                                &nbsp;
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" bgcolor="#E2E4E5">
+                                        <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td valign="top" bgcolor="#FFFFFF">
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            <td width="2">
+                                                            </td>
+                                                            <td height="2" background="images/top_line.gif">
+                                                            </td>
+                                                            <td width="2">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td background="images/left_line.gif">
+                                                            </td>
+                                                            <td align="center" bgcolor="#EFEFEF">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td width="20%" align="center" valign="top" bgcolor="#b1c3d9">
+                                                                            <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                                                                                <td width="21%" valign="top" bgcolor="#b1c3d9">
+                                                                                    <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                                        <img src="images/fglogo_transp.png" width="192" height="79" alt="" />
+                                                                                        <tr>
+                                                                                            <td height="25" align="left" class="bluetext">
+                                                                                                <asp:HyperLink ID="hlkSearchUser" runat="server" NavigateUrl="SearchUser.aspx" CssClass="bluetext">Search Patient</asp:HyperLink>
+                                                                                                <%if (hlkAdvanceSearchPatient.Visible) { Response.Write("<br /><br />"); } %>
+                                                                                                <asp:HyperLink ID="hlkAdvanceSearchPatient" runat="server" NavigateUrl="~/AdvanceSearchPatient.aspx"
+                                                                                                    CssClass="bluetext">Advanced Patient Search</asp:HyperLink>
+                                                                                                <asp:HyperLink ID="hlkUpdatePatientDetails" runat="server" Visible="false" NavigateUrl="UpdatePatientDetails.aspx"
+                                                                                                    CssClass="bluetext">Update Patient Details</asp:HyperLink><%if (hlkUpdatePatientDetails.Visible) { Response.Write("<br />"); Response.Write("<br />"); } %>
+                                                                                                <asp:HyperLink ID="hlkdocumentlist" runat="server" Visible="false" NavigateUrl="DocumentList.aspx"
+                                                                                                    CssClass="bluetext">Document List</asp:HyperLink><%if (hlkdocumentlist.Visible) { Response.Write("<br />"); Response.Write("<br />"); } %>
+                                                                                                <asp:HyperLink ID="hlkManageConsentPolicy" runat="server" Visible="false" NavigateUrl="ManageConsent.aspx"
+                                                                                                    CssClass="bluetext">Manage Consent</asp:HyperLink><%if (hlkManageConsentPolicy.Visible) { Response.Write("<br />"); Response.Write("<br />"); } %>
+                                                                                                <asp:HyperLink ID="hlkViewEmergencyOverride" runat="server" Visible="false" NavigateUrl="ViewEmergencyOverride.aspx"
+                                                                                                    CssClass="bluetext">View Emergency Override</asp:HyperLink>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td height="25" align="left" class="bluetext">
+                                                                                                <%if (hlkManageReferral.Visible) { Response.Write("<br />"); } %>
+                                                                                                <asp:HyperLink ID="hlkManageReferral" Visible="false" runat="server" NavigateUrl="ManageReferral.aspx"
+                                                                                                    CssClass="bluetext">Manage Referrals</asp:HyperLink><%if (hlkManageReferral.Visible) { Response.Write("<br />"); } %>
+                                                                                                <br />
+                                                                                                <asp:HyperLink ID="hlkChangePassword" runat="server" Visible="false" NavigateUrl="ChangePassword.aspx"
+                                                                                                    CssClass="bluetext" OnClick="return changePassword()">Change Password</asp:HyperLink>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="bluetext" height="25" align="left">
+                                                                                                <br />
+                                                                                                <asp:HyperLink ID="hypUserPreferences" runat="server" NavigateUrl="#" OnClick="return showHideMenu('tblAllowOtherDevices')"
+                                                                                                    CssClass="bluetext">User Preferences</asp:HyperLink>
+                                                                                                <table border="0" cellpadding="0" cellspacing="0" style="display: none" id="tblAllowOtherDevices">
+                                                                                                    <tr>
+                                                                                                        <td style="padding-left: 20px">
+                                                                                                            <asp:HyperLink ID="lnkExportCertificate" runat="server" NavigateUrl="AllowOtherDevices.aspx"
+                                                                                                                CssClass="bluetext" OnClick="return ExportCertificate()">Allow Other Devices</asp:HyperLink>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td  style="padding-left: 20px">
+                                                                                                            <asp:HyperLink ID="hypUpgrateAccount" Visible="true" runat="server" NavigateUrl="UpgradeAccount.aspx"
+                                                                                                                OnClick="return UpgradeAccount()" CssClass="bluetext">Upgrade Account</asp:HyperLink>
+                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td style="height: 10px">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                    <img src="images/health_info_exchange.png" width="215" alt="" />
+                                                                                </td>
+                                                                            </table>
+                                                                        </td>
+                                                                        <td valign="top">
+                                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                <tr id="tblLinks" runat="server">
+                                                                                    <td width="2%">
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                    <td height="29" align="center" background="images/dolphin_bg-OVER.gif">
+                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="whitetext">
+                                                                                            <tr visible="false">
+                                                                                                <% if (pageName == "SearchUser.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Search Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "DocumentList.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Document List</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "SharePatientDocument.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Share Patient Document</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <% else if (pageName == "RegisterProvider.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Provider</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "ManageReferral.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Manage Referrals</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "ReferPatient.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Refer Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                                <%else if (pageName == "RegisterPatient.aspx")
+                                                                                                   { %>
+                                                                                                <td height="33" style="width: 25%" align="center">
+                                                                                                    <h3>
+                                                                                                        Register Patient</h3>
+                                                                                                </td>
+                                                                                                <% } %>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td width="2%">
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr id="tblLinksBars" runat="server">
+                                                                                    <td>
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                    <td align="center" bgcolor="#143D55">
+                                                                                        <p>
+                                                                                            &nbsp;</p>
+                                                                                        <p>
+                                                                                            &nbsp;</p>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        &nbsp;
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <table style="height: 100%; width: 100%;">
+                                                                                            <tr>
+                                                                                                <td style="width: 100%; height: 100%" valign="top">
+                                                                                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                                                                                    </asp:ContentPlaceHolder>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                            <td background="images/right_line.gif">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                            </td>
+                                                            <td height="2" background="images/bot_line.gif">
+                                                            </td>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <div id="page_screen">
+        &nbsp;</div>
+    <div id="divWindow" onselectstart="return false" style="none repeat scroll 0%; -moz-background-clip: -moz-initial;
+        -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;
+        z-index: 999; visibility: visible; position: absolute; top: 190px; left: 170px;"
+        onselectstart="return 0">
+    </div>
+    <script type="text/javascript">
+        var divWindow = $('#divWindow');
+        
+    </script>
+    </form>
+</body>
+</html>

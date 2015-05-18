@@ -1,0 +1,18 @@
+<resources>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+     <dimen name="textfontsize">18dip</dimen>
+     <dimen name="listtext_fontsize">20dip</dimen>
+	<dimen name="row_margin">14dip</dimen>
+	<dimen name="section_margin">20dip</dimen>
+	<dimen name="row_margin_in_bloack">2dip</dimen>
+	<dimen name="space_button">12dip</dimen>
+	<dimen name="rightmargin">10dip</dimen>
+	<dimen name="smalltextsize">10dip</dimen>
+	<dimen name="leftmargin">6dip</dimen>
+	<dimen name="bottom_margin">35dip</dimen> 
+		<dimen name="gender_margin">15dip</dimen> 
+			<dimen name="spinner_height">60dip</dimen> 
+</resources>

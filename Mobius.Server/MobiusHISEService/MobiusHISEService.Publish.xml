@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\rajanee.verma\Desktop\Build\HISEService" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Mobius.CertificateAuthority.dll" publishTime="06/16/2014 12:29:04" />
+    <file relUrl="bin/Mobius.EventNotification.dll" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/Mobius.ClientConnect.pdb" publishTime="06/16/2014 12:29:03" />
+    <file relUrl="bin/Mobius.CertificateAuthority.pdb" publishTime="06/16/2014 12:29:04" />
+    <file relUrl="bin/Mobius.Logger.dll" publishTime="06/02/2014 16:18:15" />
+    <file relUrl="bin/Mobius.DAL.dll" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/Mobius.EventNotification.pdb" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/Mobius.BAL.dll" publishTime="06/16/2014 12:29:04" />
+    <file relUrl="bin/XACML.dll" publishTime="06/02/2014 16:18:16" />
+    <file relUrl="bin/SAMLAssertion.pdb" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll" publishTime="01/21/2013 12:01:02" />
+    <file relUrl="bin/Xacml.Core.dll" publishTime="01/13/2014 16:51:23" />
+    <file relUrl="bin/SAMLAssertion.dll" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/MobiusServiceLibrary.pdb" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/DataAccessLayer.pdb" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/Mobius.ServiceLibrary.dll" publishTime="06/16/2014 12:29:05" />
+    <file relUrl="bin/Mobius.DAL.pdb" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="01/21/2013 12:01:02" />
+    <file relUrl="bin/Mobius.BAL.pdb" publishTime="06/16/2014 12:29:04" />
+    <file relUrl="bin/C32Utility.dll" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/MobiusHISEService.dll" publishTime="06/16/2014 12:29:06" />
+    <file relUrl="MobiusHISE.svc" publishTime="01/13/2014 16:51:01" />
+    <file relUrl="bin/Mobius.Authorization.dll" publishTime="06/16/2014 12:29:04" />
+    <file relUrl="bin/MobiusServiceUtility.pdb" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/Mobius.ServiceLibrary.pdb" publishTime="06/16/2014 12:29:05" />
+    <file relUrl="bin/Mobius.Authorization.pdb" publishTime="06/16/2014 12:29:04" />
+    <file relUrl="bin/Mobius.FileSystem.pdb" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/Mobius.Logger.pdb" publishTime="06/02/2014 16:18:15" />
+    <file relUrl="bin/Microsoft.Practices.ObjectBuilder.dll" publishTime="01/21/2013 12:01:02" />
+    <file relUrl="bin/XACML.pdb" publishTime="06/02/2014 16:18:16" />
+    <file relUrl="bin/Mobius.Entity.pdb" publishTime="06/16/2014 12:29:00" />
+    <file relUrl="bin/Mobius.CoreLibrary.dll" publishTime="06/16/2014 12:29:00" />
+    <file relUrl="bin/Mobius.Entity.dll" publishTime="06/16/2014 12:29:00" />
+    <file relUrl="bin/Mobius.CoreLibrary.pdb" publishTime="06/16/2014 12:29:00" />
+    <file relUrl="Web.config" publishTime="01/15/2014 11:34:02" />
+    <file relUrl="bin/MobiusHISEService.pdb" publishTime="06/16/2014 12:29:06" />
+    <file relUrl="bin/MobiusServiceUtility.dll" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/C32Utility.pdb" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/Mobius.ClientConnect.dll" publishTime="06/16/2014 12:29:03" />
+    <file relUrl="bin/DataAccessLayer.dll" publishTime="06/16/2014 12:29:01" />
+    <file relUrl="bin/MobiusServiceLibrary.dll" publishTime="06/16/2014 12:29:02" />
+    <file relUrl="bin/Mobius.FileSystem.dll" publishTime="06/16/2014 12:29:02" />
+  </publishProfile>
+</publishData>

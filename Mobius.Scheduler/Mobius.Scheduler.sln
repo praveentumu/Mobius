@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobius.Scheduler", "Mobius.Scheduler\Mobius.Scheduler.csproj", "{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07C567B9-214F-428C-89B2-800893499324}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Mobius.Scheduler.vsmdi = Mobius.Scheduler.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiusSchedulerUnitTest", "MobiusSchedulerTestProject\MobiusSchedulerUnitTest.csproj", "{0375E6AB-69E4-4136-A7B4-61173C30AF17}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Mobius.Scheduler.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Debug|x86.ActiveCfg = Debug|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Debug|x86.Build.0 = Debug|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Release|Any CPU.ActiveCfg = Release|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Release|Mixed Platforms.Build.0 = Release|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Release|x86.ActiveCfg = Release|x86
+		{69B348F4-89A3-41C8-82F7-03C07BF6D9CC}.Release|x86.Build.0 = Release|x86
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0375E6AB-69E4-4136-A7B4-61173C30AF17}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

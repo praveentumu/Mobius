@@ -1,0 +1,16 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+	
+      <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar">
+            <item name="android:background">@drawable/landscap</item>
+            
+            
+      </style>
+            
+   
+      <style name="MobiusActionBar" parent="@android:style/Theme.Holo.Light">
+            <item name="android:actionBarStyle">@style/ActionBar</item>
+      </style>
+	
+</resources>

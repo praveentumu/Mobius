@@ -1,0 +1,9 @@
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\bin\Debug\Mobius.CoreLibrary.dll
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\bin\Debug\Mobius.CoreLibrary.pdb
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\bin\Debug\Mobius.Logger.dll
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\bin\Debug\Mobius.Logger.pdb
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\obj\Debug\Mobius.CoreLibrary.MobiusError.resources
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\obj\Debug\Mobius.CoreLibrary.dll
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\obj\Debug\Mobius.CoreLibrary.pdb
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\obj\Debug\Mobius.CoreLibrary.csprojResolveAssemblyReference.cache
+D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.CoreLibrary\obj\Debug\Mobius.CoreLibrary.csproj.GenerateResource.Cache

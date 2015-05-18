@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application Details -->
+    <string name="app_name">MobiusDroid</string>
+    <string name="submit">Submit</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="activateuser">Activate my account</string>
+    <string name="certificatePWD">Security Password</string>
+    <string name="enterSecurityPWD">Enter Security Password</string>
+
+    <!-- Activity labels -->
+    <string name="SearchPatient">Search Patient</string>
+    <string name="DocumentViewScreen">Retrieved Document</string>
+    <string name="ProviderTypeScreen">Provider Types</string>
+    <string name="RegisterProvider">Register Provider</string>
+    <string name="SelectPurpose">Select Purpose</string>
+    <string name="GetDocumentDetails">Documents Detail</string>
+    <string name="RegisterPatient">Register Patient</string>
+    <string name="PatientResult">Patients</string>
+    <string name="UserLogin">User Login</string>
+    <string name="ForgotPassword">Forgot Password</string>
+    <string name="AccountActivate">Account Activation will take few seconds.Please wait..</string>
+    <!-- Search Patient String -->
+    <string name="label_first_name">First Name</string>
+    <string name="label_last_name">Last Name</string>
+    <string name="label_dob">DOB</string>
+    <string name="label_sex">Sex</string>
+    <string name="label_male">Male</string>
+    <string name="label_female">Female</string>
+    <string name="label_patient_id">Patient ID</string>
+    <string name="label_select_community">Select Community</string>
+    <string name="Locally_Available_Documents">Locally Available Documents</string>
+    <string name="label_star">*</string>
+    <string name="label_nostar">" "</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_middle_name">Middle Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_patient_id">Patient ID</string>
+    <string name="hint_date">MM/DD/YYYY</string>
+    <string name="search">Search</string>
+    <string name="Mothers_Maiden">Mother\'s Maiden</string>
+    <string name="Mothers_Family_Name">Family Name</string>
+    <string name="Mothers_Middle_Name">Middle Name</string>
+    <string name="Mothers_Given_Name">Given Name</string>
+    <string name="Mothers_Suffix">Suffix</string>
+    <string name="Mothers_Prefix">Prefix</string>
+    <string name="selectCommunity">Select Communities</string>
+
+    <!-- Error Messages -->
+    <string name="WrongCertificatePassword">The specified security password is not correct.</string>
+    <string name="whitespaeinPassword">The security password cannot contain whitespaces.</string>
+    <string name="ImportSuccessfull">Account access enabled for this device.</string>
+    <string name="old_password_empty">Old password can not be empty.</string>
+    <string name="newPasswordEmpty">Password cannot be left blank.</string>
+    <string name="securityPasswordEmpty">Security Password cannot be left blank.</string>
+    <string name="emptyEmpty">Email ID cannot be left blank.</string>
+    <string name="password_not_match">You must enter the same password twice in order to confirm it.</string>
+    <string name="SearchPatient_Invalid_Demographics_DOB">Invalid Date of birth</string>
+    <string name="DataConnectionAvailabiltyTitle">No Data Connection Available</string>
+    <string name="DataConnectionAvailabiltyMessage">Please Check Your Internet Connection and Try Again.</string>
+    <string name="error_last_name_empty">Last name</string>
+    <string name="error_dob_empty">DOB</string>
+    <string name="error_Invalid_Certificate_Mismatch_Title">Certificate Missing</string>
+    <string name="error_Invalid_Certificate_Mismatch_msg">Device is not active for application access.Please use \'Allow this device\' option from login screen to enable the same.</string>
+    <string name="error_select_community_empty">Please Select Community !</string>
+    <string name="error_select_community_empty_title">No Community Selected</string>
+    <string name="error_No_Documents_available_title">No Document available</string>
+    <string name="error_No_Documents_available_msg">No Document is available for this user in this community.</string>
+    <string name="error_CSR_msg">To generate CSR please fill mandatory details first!</string>
+    <string name="error_CSR_title">Mandatory Details Missing</string>
+    <string name="error_Invalid_Certificate_Title">Invalid Certificate</string>
+    <string name="error_Invalid_Certificate_Msg">Provided Certificate/KeyStore is invalid. Try with Valid Certificate or Register again.</string>
+    <string name="error_PrivateKey">Private key is not available for this certificate.</string>
+    <string name="No_data_found">No data found</string>
+    <string name="No_MSG_Title">No error message is provided from server</string>
+    <string name="No_MSG">No Error Message</string>
+    <string name="ok">OK</string>
+    <string name="error_msg_purpose_not_selected">Please select purpose !</string>
+    <string name="error_unspecified_user_msg">User Information is not available in database !</string>
+    <string name="error_unspecified_user_title">Unspecified User</string>
+    <!-- Progress Dialog Messages -->
+    <string name="error_check_cert">"Checking Certificate.."</string>
+    <string name="progressbar_msg_User_Info">"Fetching User Information.."</string>
+    <string name="progressbar_msg_get_document">"Loading document.."</string>
+    <string name="progressbar_msg_purpose">"Loading Purpose List.."</string>
+    <string name="progressbar_msg_doc_Details">"Loading Document Details.."</string>
+    <string name="select_cert">Select Certificate</string>
+    <string name="CertificateImport">Allow this device</string>
+    <string name="importHelpMessage"> 1. Go to Application Settings (Settings ->Applications) and Clear the application data.\n\n
+	                                             2. Place the exported certificate to root of external Storage of device.\n\n
+	                                             3. Launch the application again.\n</string>
+    <string name="appUpgradeTitle">Application Upgrade</string>
+    <string name="appUpgradeMessage">New Version of MobiusDroid application is available for Upgrade.</string>
+
+    <!-- Document details String -->
+    <string name="calender_desc">Button for DOB selection</string>
+    <string name="dialog_wait">Wait</string>
+    <string name="documentname">Document Name</string>
+    <string name="documentdate">Created On</string>
+    <string name="author">Author</string>
+    <string name="datasource">Data Source</string>
+    <string name="get">Get Documents</string>
+    <string name="Community">Community</string>
+    <!-- Select Purpose -->
+    <string name="select_purpose">Select Purpose</string>
+    <string name="view_document">View Document</string>
+
+    <!-- Register Patient and Provider -->
+    <string name="Patient">Patient</string>
+    <string name="refer">Refer</string>
+    <string name="UserPassword">Password</string>
+    <string name="UserType">User Type</string>
+    <string name="Provider">Provider</string>
+    <string name="Login">Login</string>
+    <string name="label_Patient">Patient</string>
+    <string name="SSN_NO">SSN</string>
+    <string name="DOB">Date of Birth</string>
+    <string name="User_email">User Email ID</string>
+    <string name="Mother_Name">Mother\'s Maiden Name</string>
+    <string name="Telephone">Telephone</string>
+    <string name="Type">Type</string>
+    <string name="Data">Data</string>
+    <string name="Extension">Extension</string>
+    <string name="Address">Address</string>
+    <string name="AddressLine1">Address Line 1</string>
+    <string name="AddressLine2">Address Line 2</string>
+    <string name="Zip">Zip</string>
+    <string name="City">City</string>
+    <string name="State">State</string>
+    <string name="CertiSigRequest">Certificate Signing Request</string>
+    <string name="Register">Register</string>
+    <string name="Generate">Generate</string>
+    <string name="Cancel">Cancel</string>
+    <string name="Update">Update</string>
+    <string name="provider_type">Provider Type</string>
+    <string name="individual_provider">Individual</string>
+    <string name="organizational">Organization</string>
+    <string name="organizationname">Organization Name</string>
+    <string name="middlename">Middle Name</string>
+    <string name="emailid">Email ID</string>
+    <string name="emaiidhint">Email ID</string>
+    <string name="language">Language</string>
+    <string name="allowotherdevices">Allow Other Devices</string>
+    <string name="label_medicalrecorddeliveryemailid">Medical Records Delivery Email ID</string>
+    <string name="label_status">Status</string>
+    <string name="label_postalcode">Postal Code</string>
+    <string name="hint_postal_code">ZIP</string>
+    <string name="label_Register">Register</string>
+    <string name="label_electronicuri">Electronic Service URI</string>
+    <string name="URI">URI</string>
+    <string name="label_contact">Contact No.</string>
+    <string name="label_speciality">Specialty</string>
+    <string name="label_csr">Certificate Signing Request</string>
+    <string name="checkBoxRememberMe">Keep me logged in</string>
+    <string name="uri">Electronic Service URI</string>
+    <string name="hint_contact">Contact No.</string>
+    <string name="select_Speciality">Select Specialty</string>
+    <string name="ForgotPWD">Forgot password?</string>
+    <string name="DocumentID">Document ID</string>
+
+    <string-array name="sex_option">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="phone_option">
+        <item>Work</item>
+        <item>Home</item>
+    </string-array>
+
+    <string name="hint_speciality">Specialty</string>
+    <string name=" data_not_present ">please Enter Data</string>
+    <string name="others">Other</string>
+    <string name="settings_password">Enter Password :</string>
+    <string name="settings_password2">Confirm Password</string>
+    <string name="settings_password1">Enter Password</string>
+    <string name="export_message">User preferences has been shared to enable account access, across system(s).</string>
+    <string name="advance_search">Advanced Search</string>
+    <string name="TelephoneFilter">Telephone Filter</string>
+    <string name="label_Patient_Filter">Patient Demographic Filter</string>
+    <string name="Mothers_Maiden_Filter">Mother\'s Maiden Name Filter</string>
+    <string name="TelephoneNums">Telephone Number(s)</string>
+    <string name="telephoneMessage">Enter multiple values in separate line e.g. #-###-####</string>
+    <string name="multipleValueMessage">Enter multiple values in separate line.</string>
+    <string name="AddressFilter">Address Filter</string>
+    <string name="Street">Street</string>
+    <string name="Country">Country</string>
+    <string name="SSN">SSN</string>
+    <string name="BirthAddressFilter">Birth Place Address Filter</string>
+    <string name="BirthPlaceStreet">Birth Place Street</string>
+    <string name="BirthPlaceCountry">Birth Place Country</string>
+    <string name="BirthPlaceState">Birth Place State</string>
+    <string name="BirthPlaceZip">Birth Place Zip</string>
+    <string name="BirthPlaceCity">Birth Place City</string>
+    <string name="label_DeceasedDate">Deceased Date</string>
+    <string name="change_password">Change Password</string>
+    <string name="close">Close</string>
+    <string name="title_activity_date_fragment">DateFragmentActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

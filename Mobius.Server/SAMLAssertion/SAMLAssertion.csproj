@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B79C7929-107E-4F66-86B0-6C18E41DD16D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAMLAssertion</RootNamespace>
+    <AssemblyName>SAMLAssertion</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CDAConstants.cs" />
+    <Compile Include="SAMLAssertionForDocQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SAMLAssertionForDocSubmit.cs" />
+    <Compile Include="SAMLAssertionForDocumentSubmit.cs" />
+    <Compile Include="SAMLAssertionHelper.cs" />
+    <Compile Include="Web References\DocQuery\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\HarrisStore\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\RetrieveDocument\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAMLService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.0.30.61:8008/SAMLService/SamlService1.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAMLService\</RelPath>
+      <UpdateFromURL>http://10.0.30.61:8008/SAMLService/SamlService1.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAMLAssertion_SAMLService_SamlService1</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ec2-50-16-98-152.compute-1.amazonaws.com:8080/HarrisIntegrationServices/DocQueryIntegrationService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DocQuery\</RelPath>
+      <UpdateFromURL>http://ec2-50-16-98-152.compute-1.amazonaws.com:8080/HarrisIntegrationServices/DocQueryIntegrationService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAMLAssertion_DocQuery_EntityDocQuery</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ec2-50-16-98-152.compute-1.amazonaws.com:8080/HarrisIntegrationServices/DocumentRetrieveIntegrationService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\RetrieveDocument\</RelPath>
+      <UpdateFromURL>http://ec2-50-16-98-152.compute-1.amazonaws.com:8080/HarrisIntegrationServices/DocumentRetrieveIntegrationService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAMLAssertion_RetrieveDocument_EntityDocRetrieve</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://ec2-50-16-98-152.compute-1.amazonaws.com:8080/HarrisIntegrationServices/StoreDocumentIntegrationService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\HarrisStore\</RelPath>
+      <UpdateFromURL>http://ec2-50-16-98-152.compute-1.amazonaws.com:8080/HarrisIntegrationServices/StoreDocumentIntegrationService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAMLAssertion_HarrisStore_EntityXDR_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DocQuery\AdhocQueryResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DocQuery\DocQueryIntegrationService.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService0.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService1.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService10.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService11.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService12.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService13.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService14.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService15.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService16.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService17.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService2.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService3.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService4.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService5.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService6.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService7.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService8.xsd" />
+    <None Include="Web References\DocQuery\DocQueryIntegrationService9.xsd" />
+    <None Include="Web References\DocQuery\EntityDocQuery.wsdl" />
+    <None Include="Web References\DocQuery\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\HarrisStore\NhincEntityXDR.wsdl" />
+    <None Include="Web References\HarrisStore\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\HarrisStore\RegistryResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService0.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService1.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService10.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService11.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService12.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService13.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService14.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService15.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService16.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService17.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService18.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService2.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService3.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService4.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService5.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService6.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService7.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService8.xsd" />
+    <None Include="Web References\HarrisStore\StoreDocumentIntegrationService9.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService0.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService1.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService10.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService11.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService12.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService13.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService14.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService15.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService16.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService17.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService2.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService3.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService4.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService5.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService6.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService7.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService8.xsd" />
+    <None Include="Web References\RetrieveDocument\DocumentRetrieveIntegrationService9.xsd" />
+    <None Include="Web References\RetrieveDocument\EntityDocRetrieve.wsdl" />
+    <None Include="Web References\RetrieveDocument\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RetrieveDocument\RetrieveDocumentSetResponseType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SAMLService\Assertion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAMLService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAMLService\SamlService1.disco" />
+    <None Include="Web References\SAMLService\SamlService1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\C32Utility\C32Utility.csproj">
+      <Project>{AD5A86BB-9A1F-40A4-92A3-8059D61E7D74}</Project>
+      <Name>C32Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mobius.CoreLibrary\Mobius.CoreLibrary.csproj">
+      <Project>{400CFAD6-BEBB-4ABC-AB77-412DCB4A8400}</Project>
+      <Name>Mobius.CoreLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

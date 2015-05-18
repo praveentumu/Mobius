@@ -1,0 +1,584 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        android:id="@+id/mainTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/row_margin" >
+
+       <TextView
+           android:id="@+id/titleorg"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_weight=".4"
+           android:background="@drawable/border_new_select"
+           android:gravity="center_horizontal"
+           android:text="@string/organizational"
+           android:textAppearance="?android:attr/textAppearanceLarge"
+           android:textSize="@dimen/textfontsize"
+           android:textStyle="bold" />
+        
+        <TableRow
+            android:id="@+id/orgRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight=".03"
+                android:maxEms="1"
+                android:text="@string/label_star"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/mandatory_star_color" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:text="@string/organizationname"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+
+
+            <EditText
+                android:id="@+id/edtOrgName"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:hint="@string/organizationname"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+
+                
+            </EditText>
+
+        </TableRow>
+
+        
+                    <TableRow   android:id="@+id/orgRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight=".03"
+
+                android:text="@string/label_star"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/mandatory_star_color" />
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+
+                android:text="@string/Type"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+
+            <Spinner
+                android:id="@+id/spnrType"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:textSize="@dimen/textfontsize" />
+
+        </TableRow>
+            <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+
+             <TextView
+                 android:layout_width="0dip"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="top"
+                 android:layout_weight=".03"
+                 android:maxEms="1"
+                 android:text="@string/label_star"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/mandatory_star_color" />
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:text="@string/label_medicalrecorddeliveryemailid"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+
+
+
+
+            <EditText
+                android:id="@+id/edtdeliveryemailid"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:hint="@string/emaiidhint"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+
+          
+            </EditText>
+
+        </TableRow>
+        
+            
+               <TableRow
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		 android:layout_margin="@dimen/row_margin">
+
+		             <TextView
+		                android:layout_width="0dip"
+		                 android:layout_height="wrap_content"
+		                 android:layout_gravity="top"
+		                 android:layout_weight=".04"
+		                 android:maxEms="1"
+		                 android:text="@string/label_star"
+		                 android:textAppearance="?android:attr/textAppearanceLarge"
+		                 android:textColor="@color/mandatory_star_color" />
+
+
+            		<TextView
+            		    android:layout_width="0dip"
+            		    android:layout_height="wrap_content"
+            		    android:layout_weight=".39"
+            		    android:text="@string/UserPassword"
+            		    android:textAppearance="?android:attr/textAppearanceLarge"
+            		    android:textSize="@dimen/textfontsize" />
+
+
+            		<EditText
+            		    android:id="@+id/edtPassword"
+            		    android:layout_width="0dip"
+            		    android:layout_height="wrap_content"
+            		    android:layout_weight=".6"
+            		    android:ems="10"
+            		    android:inputType="textPassword"
+            		    android:textSize="@dimen/textfontsize" >
+					</EditText>
+		        </TableRow>
+		        
+            
+              <TableRow
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/row_margin" >
+            <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight=".39"
+                 android:background="@drawable/border_new_select"
+                 android:gravity="center_horizontal"
+                 android:text="@string/Address"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/textfontsize"
+                 android:textStyle="bold" />
+              </TableRow>
+                    
+                 <TableRow
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/row_margin" >
+
+      <TextView
+          android:layout_width="0dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="top"
+          android:layout_weight=".03"
+          android:maxEms="1"
+          android:text="@string/label_star"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:textColor="@color/mandatory_star_color" />
+
+ <TextView
+          android:layout_width="0dip"
+          android:layout_height="wrap_content"
+          android:layout_weight=".39"
+          android:text="@string/label_postalcode"
+          android:textAppearance="?android:attr/textAppearanceLarge"
+          android:textSize="@dimen/textfontsize" />
+
+
+
+
+
+
+
+ <EditText
+     android:id="@+id/edtzip"
+     android:layout_width="0dip"
+     android:layout_height="wrap_content"
+     android:layout_weight=".15"
+     android:ems="10"
+     android:hint="@string/hint_postal_code"
+     android:inputType="number"
+     android:textSize="@dimen/textfontsize" />
+
+ <TextView
+     android:id="@+id/txtCity"
+     android:layout_width="0dip"
+     android:layout_height="wrap_content"
+     android:layout_weight=".35"
+     android:ellipsize="end"
+     android:gravity="center_horizontal"
+     android:hint="@string/City"
+     android:singleLine="true"
+     android:textSize="@dimen/textfontsize" />
+
+<TextView
+    android:id="@+id/txtSate"
+    android:layout_width="0dip"
+    android:layout_height="wrap_content"
+    android:layout_weight=".10"
+    android:ellipsize="end"
+    android:hint="@string/State"
+    android:singleLine="true"
+    android:textSize="@dimen/textfontsize" />
+
+  </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+
+             <TextView
+                  android:layout_width="0dip"
+		          android:layout_height="wrap_content"
+		          android:layout_gravity="top"
+		          android:layout_weight=".03"
+		          android:maxEms="1"
+		          android:text="@string/label_nostar"
+		          android:textAppearance="?android:attr/textAppearanceLarge"
+		          android:textColor="@color/mandatory_star_color" />
+             
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:text="@string/AddressLine1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <EditText
+                android:id="@+id/edtaddressline1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:hint="@string/AddressLine1"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+             
+            </EditText>
+        </TableRow>
+ 
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+             <TextView
+                 android:layout_width="0dip"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="top"
+                 android:layout_weight=".03"
+                 android:maxEms="1"
+                 android:text="@string/label_nostar"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/mandatory_star_color" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:hint="@string/hint_middle_name"
+                android:text="@string/AddressLine2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <EditText
+                android:id="@+id/edtaddressline2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:hint="@string/AddressLine2"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+
+            </EditText>
+        </TableRow>
+              <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight=".4"
+              android:background="@drawable/border_new_select"
+              android:gravity="center_horizontal"
+              android:text="@string/others"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:textSize="@dimen/textfontsize"
+              android:textStyle="bold" />
+        </TableRow>
+                <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+             <TextView
+               
+                 android:layout_width="0dip"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="top"
+                 android:layout_weight=".03"
+                 android:maxEms="1"
+                 android:text="@string/label_nostar"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/mandatory_star_color" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:text="@string/label_electronicuri"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <EditText
+                android:id="@+id/edtElectronicServiceURI"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:hint="@string/uri"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+
+        
+            </EditText>
+
+        </TableRow>
+            <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+
+             <TextView
+                 android:layout_width="0dip"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="top"
+                 android:layout_weight=".03"
+                 android:maxEms="1"
+                 android:text="@string/label_nostar"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/mandatory_star_color" />
+
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:hint="@string/hint_middle_name"
+                android:text="@string/label_contact"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+
+
+
+            <EditText
+                android:id="@+id/edtContact"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:ems="10"
+                android:hint="@string/hint_contact"
+                android:inputType="phone"
+                android:textSize="@dimen/textfontsize" >
+
+              
+            </EditText>
+        </TableRow>
+          
+        
+    <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+
+             <TextView
+                 android:layout_width="0dip"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="top"
+                 android:layout_weight=".03"
+                 android:maxEms="1"
+                 android:text="@string/label_nostar"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/mandatory_star_color" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".39"
+                android:text="@string/label_speciality"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+            
+         <!--    <TextView
+                android:id="@+id/txtSpeciality"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".6"
+                android:hint="@string/hint_speciality"
+                android:maxLines="1"
+                android:textSize="@dimen/textfontsize"
+                android:textAppearance="?android:attr/textAppearanceLarge" 
+                />
+             -->
+            
+            <TextView
+                android:id="@+id/txtSpeciality"
+                android:layout_width="0dip"
+                android:layout_height="@dimen/spinner_height"
+                android:layout_weight=".6"
+                  android:background="@drawable/selectorbg"
+                android:ellipsize="end"
+                 android:singleLine="true"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="@string/hint_speciality"
+               
+                android:textSize="@dimen/textfontsize" />
+            
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >  
+<TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_weight=".39"
+                 android:background="@drawable/border_new_select"
+                 android:gravity="center_horizontal"
+                 android:text="@string/label_csr"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/textfontsize"
+                 android:textStyle="bold" />
+</TableRow>
+  <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+  
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_weight=".03"
+                    android:maxEms="1"
+                    android:text="@string/label_star"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/mandatory_star_color" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:hint="@string/hint_middle_name"
+                    android:text="@string/CertiSigRequest"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textSize="@dimen/textfontsize" />
+
+                <Button
+                    android:id="@+id/btnGenerateCSR"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight=".4"
+                    android:background="@drawable/btn_keyboard_key_dark_pressed_holo"
+                    android:text="@string/Generate"
+                    android:textSize="@dimen/textfontsize" />
+    
+   </TableRow>
+
+            <TextView
+                android:id="@+id/txtCSR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/row_margin"
+                android:hint="@string/CertiSigRequest"
+                android:maxLines="30"
+                android:padding="@dimen/padding_small"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/smalltextsize" />
+
+    <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/row_margin"
+            			android:layout_marginRight="@dimen/row_margin"
+            		 	android:layout_marginTop="@dimen/row_margin"
+            		 	android:layout_marginBottom="@dimen/bottom_margin">
+
+   <Button
+       android:id="@+id/btnregisterprovider"
+       android:layout_width="0dip"
+       android:layout_height="wrap_content"
+       android:layout_marginRight="@dimen/space_button"
+       android:layout_weight="0.6"
+       android:background="@drawable/btn_keyboard_key_dark_pressed_holo"
+       android:padding="@dimen/padding_large"
+       android:text="@string/label_Register"
+       android:textSize="@dimen/textfontsize" />
+
+                 <Button
+                     android:id="@+id/btncancel"
+                     android:layout_width="0dip"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.6"
+                     android:background="@drawable/btn_keyboard_key_dark_pressed_holo"
+                     android:padding="@dimen/padding_large"
+                     android:text="@string/Cancel"
+                     android:textSize="@dimen/textfontsize" />
+           
+   </TableRow>
+      
+    </TableLayout>
+
+   </ScrollView>
+    
+
+

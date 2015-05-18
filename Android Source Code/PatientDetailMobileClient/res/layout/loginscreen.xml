@@ -1,0 +1,202 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       
+        android:layout_marginTop="@dimen/bottom_margin"
+          android:layout_marginLeft="@dimen/row_margin"
+            android:layout_marginRight="@dimen/row_margin"
+              android:layout_marginBottom="@dimen/bottom_margin"
+              
+        android:padding="@dimen/row_margin" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:gravity="center_vertical"
+                android:text="@string/emailid"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <EditText
+                android:id="@+id/edtLoginEmail"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:ems="10"
+                android:hint="@string/emailid"
+                android:inputType="textPersonName"
+                android:textSize="@dimen/textfontsize" >
+                    <requestFocus />
+            </EditText>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/row_margin" >
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:gravity="center_vertical"
+                android:text="@string/UserPassword"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <EditText
+                android:id="@+id/edtLoginPWD"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:ems="10"
+                android:hint="@string/UserPassword"
+                android:inputType="textPassword"
+                android:textSize="@dimen/textfontsize" >
+
+            </EditText>
+        </TableRow>
+        
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/row_margin" 
+            android:layout_marginRight="@dimen/row_margin"
+            android:layout_marginTop="@dimen/row_margin"
+            android:layout_marginBottom="@dimen/bottom_margin">
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight=".3"
+                android:gravity="center_vertical"
+                android:text="@string/UserType"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/textfontsize" />
+
+            <RadioGroup
+                android:id="@+id/radioUserType"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radioProvider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/Provider"
+                    android:checked="true"
+                    android:textSize="@dimen/textfontsize" />
+                <RadioButton
+                    android:id="@+id/radioPatient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    
+                    android:text="@string/label_Patient"
+                    android:textSize="@dimen/textfontsize" />
+
+            </RadioGroup>
+            
+        </TableRow>
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:layout_marginLeft="@dimen/row_margin"
+                 android:layout_marginRight="@dimen/row_margin"
+                 android:layout_marginTop="@dimen/row_margin"
+                 android:orientation="horizontal"
+                 android:paddingBottom="@dimen/padding_medium" >
+
+                 <Button
+                     android:id="@+id/btnLogin"
+                     android:layout_width="0dip"
+                     android:layout_height="wrap_content"
+                     android:layout_marginRight="@dimen/space_button"
+                     android:layout_weight="0.5"
+                     android:background="@drawable/btn_keyboard_key_dark_pressed_holo"
+                     android:padding="@dimen/padding_large"
+                     android:text="@string/Login"
+                     android:textSize="@dimen/textfontsize" />
+
+                 <Button
+                     android:id="@+id/btnRegister"
+                     android:layout_width="0dip"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="0.5"
+                     android:background="@drawable/btn_keyboard_key_dark_pressed_holo"
+                     android:padding="@dimen/padding_large"
+                     android:text="@string/Register"
+                     android:textSize="@dimen/textfontsize" />
+
+             </LinearLayout>
+             <CheckBox
+			    android:id="@+id/checkRemember"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_horizontal" 
+			    android:layout_margin="@dimen/row_margin" 
+			    android:text="@string/checkBoxRememberMe" 
+			   	android:textSize="@dimen/textfontsize"
+			   
+			    />
+		             
+             <TextView
+                 android:id="@+id/txtForgotPWD"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="@dimen/row_margin"
+                 android:gravity="center_horizontal"
+                 android:padding="@dimen/padding_large"
+                 android:text="@string/ForgotPWD"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/forgotPassword"
+                 android:textSize="@dimen/textfontsize" />
+
+             <TextView
+                 android:id="@+id/txtImport"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="@dimen/row_margin"
+                 android:gravity="center_horizontal"
+                 android:padding="@dimen/padding_large"
+                 android:text="@string/CertificateImport"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textColor="@color/forgotPassword"
+                 android:textSize="@dimen/textfontsize" />
+             
+                  <TextView
+                      android:id="@+id/TextView_ActivateUser"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_margin="@dimen/row_margin"
+                      android:gravity="center"
+                      android:padding="@dimen/padding_medium"
+                      android:text="@string/activateuser"
+                      android:textColor="@color/forgotPassword"
+                      android:textSize="@dimen/listtext_fontsize" />
+
+    </TableLayout>
+
+    </ScrollView>
+    
+
+
+

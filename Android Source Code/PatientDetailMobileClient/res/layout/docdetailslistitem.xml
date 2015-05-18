@@ -1,0 +1,161 @@
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_large" 
+        android:background="@color/titlebackgroundcolor"
+        android:id="@+id/linDoc"
+        >
+<LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:padding="@dimen/padding_medium" >
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginRight="@dimen/padding_medium"
+                 android:text="@string/DocumentID"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize"
+                 android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/DocID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/listtext_fontsize" />
+
+    </LinearLayout>   <LinearLayout
+         
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:padding="@dimen/padding_medium" >
+
+       <TextView
+           android:layout_width="0dip"
+           android:layout_height="fill_parent"
+           android:layout_marginRight="@dimen/padding_small"
+           android:layout_weight=".2"
+           android:gravity="center_vertical"
+           android:text="@string/documentname"
+           android:textAppearance="?android:attr/textAppearanceLarge"
+           android:textSize="@dimen/listtext_fontsize"
+           android:textStyle="bold" />
+
+             <TextView
+                 android:id="@+id/txtDocName"
+                 android:layout_width="0dip"
+                 android:layout_height="fill_parent"
+                 android:layout_weight=".6"
+                  android:ellipsize="end"
+                 android:singleLine="true"
+                 android:gravity="center_vertical"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize" />
+
+             <ImageView
+                 android:id="@+id/imgRefer"
+                 android:layout_width="0dip"
+                 android:layout_height="wrap_content"
+                 android:layout_weight=".2"
+                 android:src="@drawable/ic_menu_share" />
+
+    </LinearLayout>
+
+   
+         
+         
+    
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:padding="@dimen/padding_medium" >
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginRight="@dimen/padding_medium"
+                 android:text="@string/author"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize"
+                 android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtAutorValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+       
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/listtext_fontsize" />
+
+    </LinearLayout>
+
+         <LinearLayout
+         
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:padding="@dimen/padding_medium" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_weight=".5"
+        android:orientation="horizontal" >
+             
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginRight="@dimen/padding_medium"
+                 android:text="@string/documentdate"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize"
+                 android:textStyle="bold" />
+
+             <TextView
+                 android:id="@+id/textDate"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize" />
+
+             </LinearLayout>
+
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="right"
+                 android:layout_weight=".5"
+                 android:orientation="horizontal" >
+
+  			<TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="44dp"
+                 android:layout_marginRight="@dimen/padding_medium"
+                 android:text="@string/datasource"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize"
+                 android:textStyle="bold" />
+
+             <TextView
+                 android:id="@+id/textDataSourceValue"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="right"
+                 android:textAppearance="?android:attr/textAppearanceLarge"
+                 android:textSize="@dimen/listtext_fontsize" />
+
+             </LinearLayout>
+
+           
+
+         </LinearLayout>
+    
+      </LinearLayout>
