@@ -1,6 +1,0 @@
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\XACML\bin\Debug\XACML.dll.config
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\XACML\bin\Debug\XACML.dll
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\XACML\bin\Debug\XACML.pdb
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\XACML\obj\Debug\XACML.dll
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\XACML\obj\Debug\XACML.pdb
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\XACML\obj\Debug\XACML.csprojResolveAssemblyReference.cache

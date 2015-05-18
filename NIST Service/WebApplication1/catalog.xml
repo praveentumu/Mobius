@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://hit-testing.nist.gov:11080/ws/services/ValidationWebService?wsdl" uri="src/conf/xml-resources/web-services/NewWebServiceFromWSDL/wsdl/hit-testing.nist.gov_11080/ws/services/ValidationWebService.wsdl"/>
-</catalog>

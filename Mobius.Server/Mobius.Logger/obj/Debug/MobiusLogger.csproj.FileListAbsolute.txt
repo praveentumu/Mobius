@@ -1,4 +1,0 @@
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.Logger\bin\Debug\Mobius.Logger.dll
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.Logger\bin\Debug\Mobius.Logger.pdb
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.Logger\obj\Debug\Mobius.Logger.dll
-D:\First Genesis SVN\trunk\SDLC\Source\Mobius Phase-II\Source Code\Mobius.Server\Mobius.Logger\obj\Debug\Mobius.Logger.pdb
